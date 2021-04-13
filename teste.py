@@ -6,7 +6,7 @@ def verifica(texto, palavrasProibidas):
     return True
 
 
-palavrasProibidas = ["c05n0", "v4g4bund0", "@rr0mbad0", "errado"]
+palavrasProibidas = ['proibido']
 texto = input("Digite o texto: ")
 
 
