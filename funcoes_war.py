@@ -8,9 +8,10 @@ pais_fronteira = {'Brasil': 'Argentina Colombia Egito', 'Argentina': 'Brasil Col
                   }
 
 
-def conquista(conquistador, conquistado, pais):
-    conquistador[pais] = 1
-    del conquistado[pais]
+def conquista(conquistador, conquistado, pais_destino, pais_origem):
+    conquistador[pais_destino] = 1
+    conquistador[pais_origem] -= 1
+    del conquistado[pais_destino]
     return conquistador
 
 
@@ -32,20 +33,17 @@ def verifica_fronteira(atacante, destino, fronteira=pais_fronteira):
 
 def joga_dado_ataque(quantidade):
     if quantidade > 3:
-        input('Jogue os dados: ')
         a_dado1 = randint(1, 6)
         a_dado2 = randint(1, 6)
         a_dado3 = randint(1, 6)
         print(f'Dado ataque: {sorted([a_dado1, a_dado2, a_dado3])}')
         return sorted([a_dado1, a_dado2, a_dado3])
     elif quantidade == 3:
-        input('Jogue os dados: ')
         a_dado1 = randint(1, 6)
         a_dado2 = randint(1, 6)
         print(f'Dado ataque: {sorted([a_dado1, a_dado2])}')
         return sorted([a_dado1, a_dado2])
     elif quantidade == 2:
-        input('Jogue os dados: ')
         a_dado1 = randint(1, 6)
         print(f'Dado ataque: {a_dado1}')
         return [a_dado1]
@@ -110,7 +108,7 @@ def joga_jogador(jogador_pais_exercito, computador_pais_exercito, fronteira=pais
                     print(f'Você destruiu um exército de {destino} restam {computador_pais_exercito[destino]}')
             except ValueError:
                 print(f'Parabéns você conquistou este país ({destino})!')
-                jogador_pais_exercito = conquista(jogador_pais_exercito, computador_pais_exercito, destino)
+                jogador_pais_exercito = conquista(jogador_pais_exercito, computador_pais_exercito, destino, atacante)
                 break
             if max(dados_jogador) <= max(dados_computador):
                 jogador_pais_exercito[atacante] -= 1
@@ -126,8 +124,8 @@ def joga_jogador(jogador_pais_exercito, computador_pais_exercito, fronteira=pais
 
 def joga_novamente(jogador_p_e, computador_p_e, pular=False):
     if pular is False:
-        print(f'\nResultado do seu exército após a batalha:     {jogador_p_e}')
-        print(f'Resultado do exército inimigo após a batalha: {computador_p_e}')
+        print(f'\n\nResultado do seu exército após a batalha: \n{jogador_p_e}\n')
+        print(f'Resultado do exército inimigo após a batalha: \n{computador_p_e}\n')
     exercitos = []
     for x in jogador_p_e.values():
         exercitos.append(x)
@@ -141,4 +139,8 @@ def joga_novamente(jogador_p_e, computador_p_e, pular=False):
     elif denovo == 'NAO' or denovo == 'NÃO':
         return False
     else:
-        return joga_novamente(jogador_p_e, computador_p_e)
+        return joga_novamente(jogador_p_e, computador_p_e, pular=True)
+
+
+def joga_computador(pc_p_e, jogador_p_e, fronteira=pais_fronteira):
+

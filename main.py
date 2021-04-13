@@ -1,5 +1,5 @@
 from random import randint
-from funcoes_war import joga_jogador, distribui_6_exercitos, joga_novamente
+from funcoes_war import joga_jogador, distribui_6_exercitos, joga_novamente, joga_computador
 
 paises = [
     'Brasil', 'Argentina', 'Colombia', 'Mexico', 'Eua', 'Uk',
@@ -27,6 +27,6 @@ while denovo is True:
     denovo = joga_novamente(jogador_paises_exercito, computador_paises_exercito)
 print('cú')
 
-
+joga_computador(computador_paises_exercito, jogador_paises_exercito)
 
 
