@@ -1,5 +1,5 @@
 from random import randint
-from funcoes_war import joga_jogador, distribui_6_exercitos
+from funcoes_war import joga_jogador, distribui_6_exercitos, joga_novamente
 
 paises = [
     'Brasil', 'Argentina', 'Colombia', 'Mexico', 'Eua', 'Uk',
@@ -19,8 +19,14 @@ for x in jogador_paises_exercito.keys():
     del computador_paises_exercito[x]
 distribui_6_exercitos(computador_paises_exercito)
 
+
 # Joga 1° rodada, falta fazer verificação de repetição de jogada, pular vez etc etc...
 joga_jogador(jogador_paises_exercito, computador_paises_exercito)
-print(jogador_paises_exercito)
-print(computador_paises_exercito)
+denovo = True
+while denovo is True:
+    denovo = joga_novamente(jogador_paises_exercito, computador_paises_exercito)
+print('cú')
+
+
+
 
