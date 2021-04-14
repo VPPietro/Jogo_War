@@ -3,3 +3,7 @@ Bug 1 - Se o jogador não tiver mais ataques, porém 2 ou mais exércitos em um 
 para jogar novamente, não tem como passar mais a vez. (talvez colocar a pergunta novamente ao tentar atacar pais fora
 da fronteira ou da sua própria lista)    *** CORRIGIDO: adicionado a opção de escrever 'pular' no 'país de origem'.
 """ # Bug 1 - CORRIGIDO
+
+
+# Dúvida, porque mesmo sem retornar a função direto dentro da variável no main (ex> jogador_pais_exercito) ela
+# retorna atualizada quando chamo no main?

@@ -27,6 +27,6 @@ while denovo is True:
     denovo = joga_novamente(jogador_paises_exercito, computador_paises_exercito)
 print('cú')
 
-joga_computador(computador_paises_exercito, jogador_paises_exercito)
 
+joga_computador(computador_paises_exercito, jogador_paises_exercito)
 
