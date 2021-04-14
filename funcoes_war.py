@@ -87,13 +87,13 @@ def joga_jogador(jogador_pais_exercito, computador_pais_exercito, adiciona_exerc
         dados_jogador = joga_dado_ataque(jogador_pais_exercito[atacante])
         for x in dados_jogador:
             if x is True:
-                 computador_pais_exercito[destino] -= 1
-                 print(f'Você destruiu o exército de {destino} restam: {computador_pais_exercito[destino]}')
-                 if computador_pais_exercito[destino] <= 0:
-                     print(f'Parabéns Você conquistou o País {destino}!')
-                     jogador_pais_exercito = \
-                         conquista(jogador_pais_exercito, computador_pais_exercito, destino, atacante)
-                     break
+                computador_pais_exercito[destino] -= 1
+                print(f'Você destruiu o exército de {destino} restam: {computador_pais_exercito[destino]}')
+                if computador_pais_exercito[destino] <= 0:
+                    print(f'Parabéns Você conquistou o País {destino}!')
+                    jogador_pais_exercito = \
+                        conquista(jogador_pais_exercito, computador_pais_exercito, destino, atacante)
+                    break
             elif x is False:
                 jogador_pais_exercito[atacante] -= 1
                 print(f'Seu exército falhou, restam: {jogador_pais_exercito[atacante]}')
@@ -164,7 +164,3 @@ def joga_computador(pc_p_e, jogador_p_e, fronteira=pais_fronteira, add_exercito=
                 print(f'O exército de computador falhou, restam: {pc_p_e[atacante]}')
         input('Pressione Enter para continuar.')
     return pc_p_e, jogador_p_e
-
-
-
-
