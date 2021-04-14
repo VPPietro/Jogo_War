@@ -1,3 +1,5 @@
+from random import randint
+
 """
 def verifica(texto, palavrasProibidas):
 
@@ -69,3 +71,11 @@ def breakingbad(ass, boob):
 
 print(breakingbad(a, b))
 """ # teste comportamento do break
+
+"""
+mydict = {'george': 16, 'amber': 19}
+print(list(mydict.keys())[list(mydict.values()).index(16)])  # Código da net
+"""  # Teste de obter nome do país pela quantidade maior de exercito
+
+comprimento = 6
+print(randint(1, comprimento))
