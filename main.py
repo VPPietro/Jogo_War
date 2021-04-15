@@ -1,5 +1,5 @@
 from random import randint
-from funcoes_war import joga_jogador, distribui_6_exercitos, joga_novamente, joga_computador, define_atacante_destino_pc
+from funcoes_war import joga_jogador, distribui_6_exercitos, joga_novamente, joga_computador
 
 paises = [
     'Brasil', 'Argentina', 'Colombia', 'Mexico', 'Eua', 'Uk',
@@ -20,7 +20,8 @@ for x in jogador_paises_exercito.keys():
 distribui_6_exercitos(computador_paises_exercito)
 count = False
 
-# Joga 1° rodada, falta fazer verificação de repetição de quem ganhou
+
+# Joga
 def run():
     global count
     joga_jogador(jogador_paises_exercito, computador_paises_exercito)
@@ -32,8 +33,12 @@ def run():
     else:
         count = True
     joga_computador(computador_paises_exercito, jogador_paises_exercito, add_exercito=False)
-    return run()
-    # falta definir quem ganhou
+    if len(jogador_paises_exercito) <= 2:
+        return print('O computador venceu!')
+    elif len(computador_paises_exercito) <= 2:
+        return print('O jogador venceu!')
+    else:
+        return run()
 
 
 run()

@@ -20,7 +20,7 @@ def distribui_6_exercitos(pais_exercito):
     comprimento = len(pais_exercito) - 1
     for x in pais_exercito.keys():
         paises.append(x)
-    for x in range(6):
+    for x in range(len(pais_exercito) + 1):
         pais_exercito[paises[randint(0, comprimento)]] += 1
     return pais_exercito
 
