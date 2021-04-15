@@ -20,3 +20,6 @@ Bug 2- se o jogador pula a primeira jogada o programa pergunta duas vezes se des
 
 # deve-se distribuir menos peças por rodada? talvez a quantidade de países que o jogador tem + 2 (como no jogo original
 # pois fica dificil de ganhar quando o oponente tem poucos paises.
+
+
+# jogo termina quando alguém tiver somente dois países, se for esperar zerar demora muito
