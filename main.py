@@ -20,8 +20,7 @@ for x in jogador_paises_exercito.keys():
 distribui_6_exercitos(computador_paises_exercito)
 count = False
 
-
-# Joga
+# Joga 1° rodada, falta fazer verificação de repetição de quem ganhou
 def run():
     global count
     joga_jogador(jogador_paises_exercito, computador_paises_exercito)
@@ -33,12 +32,8 @@ def run():
     else:
         count = True
     joga_computador(computador_paises_exercito, jogador_paises_exercito, add_exercito=False)
-    if len(jogador_paises_exercito) <= 2:
-        return print('O computador venceu!')
-    elif len(computador_paises_exercito) <= 2:
-        return print('O jogador venceu!')
-    else:
-        return run()
+    return run()
+    # falta definir quem ganhou
 
 
 run()
