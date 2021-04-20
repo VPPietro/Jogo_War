@@ -1,20 +1,23 @@
-from define_jogador import Jogador
+from jogador import Jogador
 from joga_player import Jogada
-from random import randint
+from funcionalidades import Funcionalidades
+
 
 p1 = Jogador(input('Digite seu nome: '))
-player_p_e = Jogador.get_jogador(p1)
-pc_p_e = Jogador.get_computador(p1)
+Jogador.define_exercito_player(p1)
+Jogador.define_exercito_pc(p1)
+Jogador.distribui_novos_exercitos(p1)
+Jogador.distribui_novos_exercitos_pc(p1)
 
-# teste
-jogada_player = Jogada(player_p_e, pc_p_e)
-print(player_p_e)
-print(pc_p_e)
+Funcionalidades.mostra_paises(Jogador.get_jogador(p1), Jogador.get_computador(p1))
+origem, destino = Funcionalidades.recebe_paises()
+"""if Funcionalidades.verifica_fronteira(origem, destino):
+    print('tem fronteira')
+else:
+    print('nao tem fronteira')
+"""
 
-# teste
-origem = player_p_e[list(player_p_e.keys())[randint(0, len(player_p_e) - 1)]]
-destino = pc_p_e[list(pc_p_e.keys())[randint(0, len(pc_p_e) - 1)]]
-Jogada.joga_jogador(jogada_player, origem, destino)
-print(origem, destino)
+
+
 
 
