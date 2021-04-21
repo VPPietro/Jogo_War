@@ -14,16 +14,11 @@ class Jogador:
         self.__pc_p_e = {}
         self.__pc_p_e = Jogador.define_exercito_pc(self)
 
-    def get_jogador(self):
+    def get_player(self):
         return self.__player_p_e
-
-    def set_jogador(self, jpe):
-        self.__player_p_e = jpe
 
     def get_computador(self):
         return self.__pc_p_e
-
-    def set_computador(self, ppe):
 
     def define_exercito_player(self):
         while len(self.__player_p_e) < 6:

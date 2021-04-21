@@ -1,4 +1,4 @@
-
+# ainda não usei essa bigorna
 
 class Jogada:
 
@@ -7,9 +7,11 @@ class Jogada:
         self.__player_p_e = player_dict.__dict__[list(player_dict.__dict__.keys())[1]]
         self.__pc_p_e = player_dict.__dict__[list(player_dict.__dict__.keys())[2]]
 
-
     def get_player(self):
         return self.__player_p_e
 
     def get_computador(self):
         return self.__pc_p_e
+
+
+

@@ -1,4 +1,4 @@
-
+from random import randint
 
 class Funcionalidades:
 
@@ -23,7 +23,33 @@ class Funcionalidades:
 
     @staticmethod
     def recebe_paises():
-        origem = input('Digite o país de origem (seu país): ')
-        destino = input('Digite o país que deseja atacar: ')
+        origem = input('Digite o país de origem (seu país): ').title()
+        destino = input('Digite o país que deseja atacar: ').title()
         return origem, destino
 
+    @staticmethod
+    def joga_dado(tamanho):
+        dado = []
+        dado_bool = []
+        if tamanho > 3:
+            for x in range(3):
+                dado.append(randint(1, 10))
+                if dado[x] > 5:
+                    dado_bool.append(True)
+                else:
+                    dado_bool.append(False)
+        elif tamanho > 2:
+            for x in range(0, 2):
+                dado.append(randint(1, 10))
+                if dado[x] > 5:
+                    dado_bool.append(True)
+                else:
+                    dado_bool.append(False)
+        elif tamanho > 1:
+            for x in range(1):
+                dado.append(randint(1, 10))
+                if dado[x] > 5:
+                    dado_bool.append(True)
+                else:
+                    dado_bool.append(False)
+        return dado, dado_bool
