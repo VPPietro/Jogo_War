@@ -10,9 +10,9 @@ class Jogador:
     def __init__(self, nome):
         self.__nome = nome
         self.__player_p_e = {}
-        self.__player_p_e = Jogador.define_exercito_player(self)
+        self.__player_p_e = Jogador.__define_exercito_player(self)
         self.__pc_p_e = {}
-        self.__pc_p_e = Jogador.define_exercito_pc(self)
+        self.__pc_p_e = Jogador.__define_exercito_pc(self)
 
     def get_player(self):
         return self.__player_p_e
@@ -23,12 +23,12 @@ class Jogador:
     def get_nome(self):
         return self.__nome
 
-    def define_exercito_player(self):
+    def __define_exercito_player(self):
         while len(self.__player_p_e) < 6:
             self.__player_p_e[Jogador.paises[randint(0, 11)]] = 3
         return self.__player_p_e
 
-    def define_exercito_pc(self):
+    def __define_exercito_pc(self):
         for x in Jogador.paises:
             self.__pc_p_e[x] = 3
         for x in self.__player_p_e:

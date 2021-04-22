@@ -73,8 +73,6 @@ def run(nova_jogada=True):
 
 
 p1 = Jogador(input('Digite seu nome: '))
-Jogador.define_exercito_player(p1)
-Jogador.define_exercito_pc(p1)
 
 while len(Jogador.get_player(p1).keys()) > 2 and len(Jogador.get_computador(p1).keys()) > 2:
     run()
