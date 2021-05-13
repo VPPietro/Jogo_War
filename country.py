@@ -1,4 +1,5 @@
 from random import randint
+from ataque import Ataque
 
 
 class Country:
