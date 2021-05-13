@@ -1,4 +1,13 @@
 from random import randint
+"""
+****** shallow copy do Python funciona como todas outras linguagens?
+Ex.: no método registra_batalha, todas as alterações são feitas com os argumentos de entrada da função, porém nunca 
+retornado para o main (que é quem chama o método) e as alterações são salvas dentro do objeto lá no arquivo country.py
+da mesma forma.
+
+ Meu entendimento de Shallow copy no Python, shallow copy define que duas variáveis, por exemplo, recebem o mesmo 
+ endereço de memória, por isso se alterar uma, altera a outra também. 
+"""
 
 
 class Ataque:
@@ -29,6 +38,12 @@ class Ataque:
                 else:
                     dado_bool.append(False)
         return dado, dado_bool
+
+    @staticmethod
+    def distribui_novos_exercitos(dict_paises: dict) -> dict:
+        for x in range(6):  # Quantidade a adicionar de exército dentro do range
+            dict_paises[list(dict_paises.keys())[randint(0, len(dict_paises) - 1)]] += 1
+        return dict_paises
 
     @staticmethod
     def registra_batalha(paises_origem: dict, paises_destino: dict, dado_bool: list, origem: str, destino: str):

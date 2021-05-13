@@ -22,8 +22,8 @@ def login():
 def main():
 
     # Jogador faz ataque:
-    Country.distribui_novos_exercitos(paises.player)
-    Country.distribui_novos_exercitos(paises.pc)
+    Ataque.distribui_novos_exercitos(paises.player)
+    Ataque.distribui_novos_exercitos(paises.pc)
     print(f'Países jogador: {paises.player}')
     print(f'Países PC: {paises.pc}')
     origem, destino = Country.player_seleciona_pais(paises)
@@ -33,8 +33,8 @@ def main():
 
     # Computador faz ataque
     input('pressione qualquer tecla para continuar\n\n>')
-    Country.distribui_novos_exercitos(paises.player)
-    Country.distribui_novos_exercitos(paises.pc)
+    Ataque.distribui_novos_exercitos(paises.player)
+    Ataque.distribui_novos_exercitos(paises.pc)
     origem, destino = Country.pc_seleciona_pais(paises)
     dado, dado_bool = Ataque.joga_dado(paises.pc[origem])
     print(f'O(s) dado(s) do Computador: {dado}')

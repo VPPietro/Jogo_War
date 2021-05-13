@@ -1,5 +1,4 @@
 from random import randint
-from ataque import Ataque
 
 
 class Country:
@@ -40,22 +39,6 @@ class Country:
             if x in destino:
                 return True
         return False
-
-    @staticmethod
-    def distribui_novos_exercitos(dict_paises: dict) -> dict:
-        for x in range(6):  # Quantidade a adicionar de exército dentro do range
-            dict_paises[list(dict_paises.keys())[randint(0, len(dict_paises) - 1)]] += 1
-        return dict_paises
-
-    @staticmethod
-    def remove_1_exerc(dict_paises: dict, pais: str):
-        dict_paises[pais] -= 1
-
-    @staticmethod
-    def pais_domina(dict_origem: dict, dict_destino: dict, origem: str, destino: str):
-        dict_origem[origem] -= 1
-        dict_origem[destino] = 1
-        del dict_destino[destino]
 
     def __define_paises_player(self) -> dict:
         while len(self.__player) < 6:
