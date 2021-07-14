@@ -1,6 +1,6 @@
 """
 - Este programa poderia ter sido usado sem essa classe de usuário, porém foi criada em critério de aprendizagem.
-- Seria mais lógico o uso dessa classe caso o user tivesse senha ou alguns outros atributos a mais além do nome.
+- Seria mais lógico o uso dessa classe caso o user tivesse senha ou alguns outros atributos além do nome.
 """
 
 
